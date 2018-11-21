@@ -1,0 +1,13 @@
+{% from "shuup_cms_blog/plugins/macros.jinja" import render_article_card %}
+
+<div class="blog-articles-list">
+    {% for article in articles %}
+        {% if (loop.index0 % 3) == 0 %}
+            {% if not loop.first %}
+            </div>
+            {% endif %}
+        <div class="row">
+        {% endif %}
+        {{ render_article_card(article) }}
+    {% endfor %}
+</div>

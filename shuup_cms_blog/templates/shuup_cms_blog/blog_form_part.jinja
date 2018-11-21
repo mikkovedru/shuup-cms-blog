@@ -1,0 +1,8 @@
+{% from "shuup/admin/macros/general.jinja" import content_block %}
+{% from "shuup/admin/macros/multilanguage.jinja" import language_dependent_content_tabs, render_monolingual_fields %}
+{% set blog_form = form["blog"] %}
+
+{% call content_block(_("Blog Article"), icon="fa-newspaper-o") %}
+    {{ render_monolingual_fields(blog_form) }}
+    {{ language_dependent_content_tabs(blog_form) }}
+{% endcall %}

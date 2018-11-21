@@ -1,0 +1,23 @@
+{% macro render_article_features(article) %}
+{% if article.open_graph and article.open_graph.og_type.value == "article" and article.open_graph.article_author %}
+    {% set author = article.open_graph.article_author %}
+{% else %}
+    {% set author = article.created_by or "" %}
+{% endif %}
+<div class="article-features">
+    <span class="article-date"><i class="fa fa-clock-o"></i> {{ article.available_from|date }}</span>
+    {% if author %}
+        <span class="article-author"><i class="fa fa-user"></i> {{ author }}</span>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro render_article_card(article) %}
+<a class="article-card col-sm-12 col-md-4" href="{{ url('shuup:cms_page', url=article.url) }}">
+    <div class="article-image" style="background: url({{ article.blog_article.image.url if article.blog_article.image else '' }}) center center / cover no-repeat;"></div>
+    <div class="article-title"><h3>{{ article.title }}</h3></div>
+    {{ render_article_features(article) }}
+    {% set small_desc = (article.blog_article.small_description|truncate(210) or (article.content|safe|striptags|truncate(210)|replace("\n", " ")|replace("\"", "'"))) %}
+    <div class="article-small-description">{{ small_desc }}</div>
+</a>
+{% endmacro %}
