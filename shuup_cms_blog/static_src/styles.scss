@@ -1,0 +1,25 @@
+.article-features {
+    .article-author {
+        margin-left: 15px;
+    }
+}
+
+.blog-articles-list {
+    .article-card {
+        margin-bottom: 50px;
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+        }
+
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+
+        .article-features {
+            margin: 5px 0;
+        }
+    }
+}

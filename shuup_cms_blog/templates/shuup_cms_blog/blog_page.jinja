@@ -1,0 +1,24 @@
+{% extends "shuup/front/base.jinja" %}
+{% from "shuup/simple_cms/macros.jinja" import render_open_graph with context %}
+{% from "shuup_cms_blog/plugins/macros.jinja" import render_article_features %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content_title %}
+    {% if page.render_title %}
+        {{ page.title }}
+    {% endif %}
+{% endblock %}
+
+{% block extrameta %}
+{{ render_open_graph(page) }}
+<link rel="stylesheet" href="{{ static("shuup-cms-blog.css") }}">
+{% endblock %}
+
+{% block content %}
+    {% placeholder "blog_page_header" %}{% endplaceholder %}
+    {{ render_article_features(page) }}
+    {% placeholder "blog_page_middle" %}{% endplaceholder %}
+    {{ page.get_html()|safe }}
+    {% placeholder "blog_page_footer" %}{% endplaceholder %}
+{% endblock %}

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-22 23:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "page"
+msgstr ""
+
+msgid "This is a blog article"
+msgstr ""
+
+msgid ""
+"Indicates whether this is a blog article and it should appear on articles "
+"list."
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "The image for the article."
+msgstr ""
+
+msgid "Small description"
+msgstr ""
+
+msgid ""
+"Define a small description to be shown in article list. This is the text "
+"that should capture users attention."
+msgstr ""
+
+msgid "blog article"
+msgstr ""
+
+msgid "blog articles"
+msgstr ""
+
+msgid "Blog Articles List"
+msgstr ""
+
+msgid "Blog Article Page"
+msgstr ""
+
+msgid "Blog Article"
+msgstr ""

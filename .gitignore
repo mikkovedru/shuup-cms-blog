@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.coverage
+*.eggs/
+*.egg-info/
+**/node_modules/**

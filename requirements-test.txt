@@ -1,0 +1,9 @@
+shuup
+pytest>=3.6
+pytest-cov
+pytest-django>=3.3.2
+pytest-sugar
+flake8
+beautifulsoup4==4.5.3
+isort
+-e .
