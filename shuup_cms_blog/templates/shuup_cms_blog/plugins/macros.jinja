@@ -13,7 +13,7 @@
 {% endmacro %}
 
 {% macro render_article_card(article) %}
-<a class="article-card col-sm-12 col-md-4" href="{{ url('shuup:cms_page', url=article.url) }}">
+<a class="article-card col-xs-12 col-sm-6 col-md-4" href="{{ url('shuup:cms_page', url=article.url) }}">
     <div class="article-image" style="background: url({{ article.blog_article.image.url if article.blog_article.image else '' }}) center center / cover no-repeat;"></div>
     <div class="article-title"><h3>{{ article.title }}</h3></div>
     {{ render_article_features(article) }}
