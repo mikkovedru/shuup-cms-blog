@@ -7,6 +7,8 @@
 # LICENSE file in the root directory of this source tree.
 from __future__ import unicode_literals
 
+from django.conf import settings
+
 from shuup.admin.form_part import FormPart, TemplatedFormDef
 from shuup.admin.forms import ShuupAdminForm
 from shuup_cms_blog.models import BlogArticle
@@ -35,7 +37,8 @@ class BlogFormPart(FormPart):
             template_name="shuup_cms_blog/blog_form_part.jinja",
             required=True,
             kwargs={
-                "instance": instance
+                "instance": instance,
+                "languages": settings.LANGUAGES
             })
 
     def form_valid(self, form):
