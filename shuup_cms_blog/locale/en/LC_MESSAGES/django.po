@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-12 23:43+0000\n"
+"POT-Creation-Date: 2019-05-21 21:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "Saved Articles"
+msgstr ""
 
 msgid "page"
 msgstr ""
@@ -51,6 +54,9 @@ msgstr ""
 msgid "Blog Articles List"
 msgstr ""
 
+msgid "Blog Save Article Button"
+msgstr ""
+
 msgid "Blog Article Page"
 msgstr ""
 
@@ -58,4 +64,25 @@ msgid "Blog Article"
 msgstr ""
 
 msgid "Home"
+msgstr ""
+
+msgid "Remove from saved articles"
+msgstr ""
+
+msgid "Add to saved articles"
+msgstr ""
+
+msgid "Saved articles"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "No saved article found"
+msgstr ""
+
+msgid "Article removed with success."
+msgstr ""
+
+msgid "Article saved with success."
 msgstr ""

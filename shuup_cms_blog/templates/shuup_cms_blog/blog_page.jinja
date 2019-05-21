@@ -1,6 +1,6 @@
 {% extends "shuup/front/base.jinja" %}
 {% from "shuup/simple_cms/macros.jinja" import render_open_graph with context %}
-{% from "shuup_cms_blog/plugins/macros.jinja" import render_article_features %}
+{% from "shuup_cms_blog/plugins/macros.jinja" import render_article_features with context %}
 
 {% block title %}{{ page.title }}{% endblock %}
 

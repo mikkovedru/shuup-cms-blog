@@ -1,0 +1,11 @@
+<span class="article-save">
+    {% if is_saved %}
+        <a class="btn btn-primary" href="{{ url('shuup:shuup-cms-blog.remove-saved-article', pk=article.pk) }}?next={{ shuup.urls.model_url(article) }}">
+            <i class="fa fa-bookmark"></i> {{ _("Remove from saved articles") }}
+        </a>
+    {% else %}
+        <a class="btn btn-primary" href="{{ url('shuup:shuup-cms-blog.add-saved-article', pk=article.pk) }}?next={{ shuup.urls.model_url(article) }}">
+            <i class="fa fa-bookmark-o"></i> {{ _("Add to saved articles") }}
+        </a>
+    {% endif %}
+</span>
