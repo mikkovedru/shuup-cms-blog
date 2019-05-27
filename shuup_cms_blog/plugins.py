@@ -28,3 +28,26 @@ class ShuupCMSBlogArticleListPlugin(TemplatedPlugin):
     def render(self, context):
         add_resource(context, "head_end", static("shuup-cms-blog.css"))
         return super(ShuupCMSBlogArticleListPlugin, self).render(context)
+
+
+class ShuupCMSBlogSaveArticleButtonPlugin(TemplatedPlugin):
+    identifier = "shuup_cms_blog_save_article_button"
+    name = _("Blog Save Article Button")
+    template_name = "shuup_cms_blog/plugins/save_article.jinja"
+    required_context_variables = ("request", "object")
+
+    def is_context_valid(self, context):
+        return bool(
+            context.get("request") and
+            context["request"].customer and
+            isinstance(context["object"], Page)
+        )
+
+    def get_context_data(self, context):
+        context = super(ShuupCMSBlogSaveArticleButtonPlugin, self).get_context_data(context)
+        request = context["request"]
+        context["is_saved"] = False
+        context["article"] = context["object"]
+        if request.customer.options and request.customer.options.get("saved_articles"):
+            context["is_saved"] = context["article"].pk in request.customer.options["saved_articles"]
+        return context

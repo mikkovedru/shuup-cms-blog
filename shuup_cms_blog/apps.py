@@ -23,6 +23,13 @@ class AppConfig(shuup.apps.AppConfig):
             "shuup_cms_blog.admin_module.form_parts:BlogFormPart"
         ],
         "xtheme_plugin": [
-            "shuup_cms_blog.plugins:ShuupCMSBlogArticleListPlugin"
+            "shuup_cms_blog.plugins:ShuupCMSBlogArticleListPlugin",
+            "shuup_cms_blog.plugins:ShuupCMSBlogSaveArticleButtonPlugin"
+        ],
+        "front_urls_pre": [
+            "shuup_cms_blog.urls:urlpatterns"
+        ],
+        "customer_dashboard_items": [
+            "shuup_cms_blog.dashboard_items:SavedArticlesDashboardItem"
         ]
     }
