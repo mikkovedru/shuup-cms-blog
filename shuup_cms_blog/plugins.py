@@ -11,18 +11,35 @@ from shuup.simple_cms.models import Page
 from shuup.xtheme import TemplatedPlugin
 from shuup.xtheme.resources import add_resource
 
+from .forms import BlogConfigForm
+
 
 class ShuupCMSBlogArticleListPlugin(TemplatedPlugin):
     identifier = "shuup_cms_blog_articles_list"
     name = _("Blog Articles List")
     template_name = "shuup_cms_blog/plugins/article_list.jinja"
+    fields = [("blog_page", None)]
+    editor_form_class = BlogConfigForm
+
+    def get_defaults(self):
+        defaults = super(ShuupCMSBlogArticleListPlugin, self).get_defaults()
+        defaults.update({
+            "blog_page": self.config.get("blog_page", None)
+        })
+        return defaults
 
     def get_context_data(self, context):
         context = super(ShuupCMSBlogArticleListPlugin, self).get_context_data(context)
         request = context["request"]
-        context["articles"] = Page.objects.visible(request.shop).filter(
+        qs = Page.objects.visible(request.shop).filter(
             blog_article__is_blog_article=True
-        ).order_by("-available_from")
+        )
+        config_page_id = self.config.get("blog_page")
+        if config_page_id:
+            qs = qs.filter(parent__id=config_page_id)
+        else:
+            qs = qs.filter(parent__isnull=True)
+        context["articles"] = qs.order_by("-available_from")
         return context
 
     def render(self, context):
