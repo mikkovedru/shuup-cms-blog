@@ -15,10 +15,9 @@ class BlogConfigForm(GenericPluginForm):
     def populate(self):
         super(BlogConfigForm, self).populate()
         self.fields["blog_page"] = XThemeModelChoiceField(
-            label=_("Blog page"),
-            queryset=Page.objects.filter(children__blog_article__is_blog_article=True).distinct(),
-            required=False,
-        )
+            label=_("Blog page"), queryset=Page.objects.filter(
+                children__blog_article__is_blog_article=True).distinct().visible(
+                self.request.shop), required=False)
 
     def clean(self):
         cleaned_data = super(BlogConfigForm, self).clean()

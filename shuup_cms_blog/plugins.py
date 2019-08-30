@@ -29,11 +29,17 @@ class ShuupCMSBlogArticleListPlugin(TemplatedPlugin):
         return defaults
 
     def get_context_data(self, context):
+        page_obj = context.get("object")
         context = super(ShuupCMSBlogArticleListPlugin, self).get_context_data(context)
         request = context["request"]
         qs = Page.objects.visible(request.shop).filter(
             blog_article__is_blog_article=True
         )
+        if page_obj:
+            if isinstance(page_obj, Page) and hasattr(page_obj, 'blog_article'):
+                if page_obj.blog_article.is_blog_article:
+                    self.config["blog_page"] = page_obj.parent.pk if page_obj.parent else None
+                    qs = qs.exclude(id=page_obj.pk)  # Exclude active/visited blog article
         config_page_id = self.config.get("blog_page")
         if config_page_id:
             qs = qs.filter(parent__id=config_page_id)

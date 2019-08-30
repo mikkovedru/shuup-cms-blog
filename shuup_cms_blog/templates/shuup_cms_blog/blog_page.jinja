@@ -33,6 +33,10 @@
         {{ render_article_features(page) }}
         {% placeholder "blog_page_middle" %}{% endplaceholder %}
         {{ page.get_html()|safe }}
+        <h2>{% trans %}Related articles{% endtrans %}</h2>
+        {% placeholder "front_content" %}
+            {% plugin "shuup_cms_blog_articles_list" %}{% endplugin %}
+        {% endplaceholder %}
         {% placeholder "blog_page_footer" %}{% endplaceholder %}
     </div>
 {% endblock %}
