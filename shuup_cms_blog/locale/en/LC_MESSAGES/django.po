@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-21 21:03+0000\n"
+"POT-Creation-Date: 2019-09-12 21:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Saved Articles"
+msgstr ""
+
+msgid "Blog page"
 msgstr ""
 
 msgid "page"
@@ -64,6 +67,9 @@ msgid "Blog Article"
 msgstr ""
 
 msgid "Home"
+msgstr ""
+
+msgid "Related articles"
 msgstr ""
 
 msgid "Remove from saved articles"
