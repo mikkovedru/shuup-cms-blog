@@ -41,7 +41,7 @@ class RemoveSavedArticlesView(View):
             saved_articles.remove(pk)
             request.customer.options["saved_articles"] = saved_articles
             request.customer.save()
-            messages.success(request, _("Article removed with success."))
+            messages.success(request, _("Article removed."))
 
         if request.GET.get("next"):
             return HttpResponseRedirect(request.GET.get("next"))
@@ -62,7 +62,7 @@ class AddSavedArticlesView(View):
             request.customer.options = request.customer.options or {}
             request.customer.options["saved_articles"] = saved_articles
             request.customer.save()
-            messages.success(request, _("Article saved with success."))
+            messages.success(request, _("Article saved."))
 
         if request.GET.get("next"):
             return HttpResponseRedirect(request.GET.get("next"))
